@@ -26,7 +26,7 @@
 5. adb shell am start -D -n 包名/activity路径 启动应用,例如:`adb shell am start -D -n com.example.androidida/com.example.androidida.MainActivity`
 6. 打开IDA -> 不要选择文件
 7. 然后选择debugger -> Attach -> Remote ARM linux/Android debugger
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200512101534592.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JpbmJpbjU5NDczODk3Nw==)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200512101534592.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JpbmJpbjU5NDczODk3Nw==,size_16,color_FFFFFF,t_70)
 8. hostname = 127.0.0.1   post = 23946  然后点击debug options , 设置如下图 , 设置完成后都点击ok
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200512101733398.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JpbmJpbjU5NDczODk3Nw==,size_16,color_FFFFFF,t_70)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200512101858522.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JpbmJpbjU5NDczODk3Nw==,size_16,color_FFFFFF,t_70)
