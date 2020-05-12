@@ -14,6 +14,6 @@
         android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="IDA动态调试Android的so文件,并分享数据" />
+        android:text="IDA动态调试Android的so文件,并分析数据" />
 
 </LinearLayout>
