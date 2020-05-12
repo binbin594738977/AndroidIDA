@@ -14,7 +14,7 @@ extern "C"
 JNIEXPORT jboolean JNICALL
 Java_com_example_androidida_JniTest_hasString(JNIEnv *env, jobject jobj, jstring p1) {
     const char *nativeString1 = env->GetStringUTFChars(p1, JNI_FALSE);
-    int res = strncmp(nativeString1, "password", strlen(nativeString1));
+    int res = strcmp(nativeString1, "password");
     env->ReleaseStringUTFChars(p1, nativeString1);
     return res == 0 ? true : false;
 }
