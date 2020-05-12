@@ -20,8 +20,12 @@
  */
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_example_test_JniMainActivity_javaCallNative(JNIEnv *env, jobject p0, jstring p1);
+Java_com_example_androidida_JniTest_javaCallNative(JNIEnv *env, jobject p0, jstring p1);
 
+
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_com_example_androidida_JniTest_hasString(JNIEnv *env, jobject p0, jstring p1);
 
 #endif
 

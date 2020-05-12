@@ -28,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG, "我输入的是 -> " + str);
             }
         });
+        findViewById(R.id.btn2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean str = new JniTest().hasString("password");
+                Log.i(TAG, "输入正确了吗 -> " + str);
+            }
+        });
     }
 
 
