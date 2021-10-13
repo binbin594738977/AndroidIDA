@@ -9,12 +9,6 @@ public class JniTest {
     /**
      * 调用本地函数,返回当前字符串
      */
-    public native String javaCallNative(String str);
-
-    /**
-     * 调用本地函数,判断String
-     */
-    public native boolean hasString(String str);
-
+    public static native String callNativeMethod(String str);
 
 }

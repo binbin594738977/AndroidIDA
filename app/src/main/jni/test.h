@@ -10,23 +10,27 @@
  * #endif
  *
  */
-#ifndef TEST_H
-#define TEST_H
-
-#include <jni.h>//引用jni.h
-
-/**
- * 声明方法,具体在同名.cpp里面实现
- */
-extern "C"
-JNIEXPORT jstring JNICALL
-Java_com_example_androidida_JniTest_javaCallNative(JNIEnv *env, jobject p0, jstring p1);
+#ifndef JNI_METHODS_H
+#define JNI_METHODS_H
 
 
-extern "C"
-JNIEXPORT jboolean JNICALL
-Java_com_example_androidida_JniTest_hasString(JNIEnv *env, jobject p0, jstring p1);
+#include <jni.h>
+#include <android/log.h>
+#define TAG "xxxJNI_METHODS"
+#define JAVA_CLASS "com/example/androidida/JniTest"
+#include "util.h"
 
-#endif
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG,  TAG, __VA_ARGS__)
+#define LOGI(...) __android_log_print(ANDROID_LOG_INFO,  TAG, __VA_ARGS__)
+#define LOGW(...) __android_log_print(ANDROID_LOG_WARN,  TAG, __VA_ARGS__)
+#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, TAG, __VA_ARGS__)
+
+__BEGIN_DECLS
+JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved);
+JNIEXPORT void JNICALL JNI_OnUnload(JavaVM* vm, void* reserved);
+__END_DECLS
+
+
+#endif //JNIHOOK_H
 
 

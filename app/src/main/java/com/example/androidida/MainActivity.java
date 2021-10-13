@@ -24,15 +24,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String str = new JniTest().javaCallNative("hello jni");
+                String str = JniTest.callNativeMethod("hello jni");
                 Log.i(TAG, "我输入的是 -> " + str);
-            }
-        });
-        findViewById(R.id.btn2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean str = new JniTest().hasString("password");
-                Log.i(TAG, "输入正确了吗 -> " + str);
             }
         });
     }

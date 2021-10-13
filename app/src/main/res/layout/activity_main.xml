@@ -8,12 +8,5 @@
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="IDA动态调试Android的so文件" />
-
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="IDA静态分析so文件的方法" />
-
+        android:text="调用so方法" />
 </LinearLayout>
