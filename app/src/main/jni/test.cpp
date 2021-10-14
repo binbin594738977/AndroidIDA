@@ -1,7 +1,10 @@
 #include <string.h>
 #include "test.h"
 
+
 JavaVM *g_vm;
+static jclass gJniHookClass;
+
 
 u32 test() {
     return reverseByte(100);
@@ -28,16 +31,12 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
     g_vm = vm;
     JNIEnv *env;
 
-    LOGE("JNI_Onload start");
     if (vm->GetEnv((void **) &env, JNI_VERSION_1_6) != JNI_OK) {
-        LOGE("GetEnv() FAILED!!!");
         return JNI_ERR;
     }
 
     jclass javaClass = env->FindClass(JAVA_CLASS);
-    LOGE("we have found the class: %s", JAVA_CLASS);
-    if (javaClass == NULL) {
-        LOGE("unable to find class: %s", JAVA_CLASS);
+    if (javaClass == nullptr) {
         return JNI_ERR;
     }
 
@@ -45,12 +44,10 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
 
     env->UnregisterNatives(javaClass);
     if (env->RegisterNatives(javaClass, gMethods, sizeof(gMethods) / sizeof(JNINativeMethod)) < 0) {
-        LOGE("register methods FAILED!!!");
         return JNI_ERR;
     }
 
     env->DeleteLocalRef(javaClass);
-    LOGI("JavaVM::GetEnv() SUCCESS!");
     return JNI_VERSION_1_6;
 }
 

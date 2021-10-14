@@ -15,8 +15,6 @@
 
 
 #include <jni.h>
-#include <android/log.h>
-#define TAG "xxxJNI_METHODS"
 #define JAVA_CLASS "com/example/androidida/JniTest"
 #include "util.h"
 

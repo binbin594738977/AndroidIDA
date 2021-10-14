@@ -3,7 +3,7 @@ package com.example.androidida;
 public class JniTest {
     //加载动态库
     static {
-        System.loadLibrary("test");
+        System.loadLibrary("testida");
     }
 
     /**
