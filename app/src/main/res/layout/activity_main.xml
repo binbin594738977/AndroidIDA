@@ -8,5 +8,11 @@
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="调用so方法" />
+        android:text="调用方法JniMethods" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hook本地函数" />
 </LinearLayout>

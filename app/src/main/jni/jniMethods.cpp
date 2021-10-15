@@ -1,5 +1,5 @@
 #include <string.h>
-#include "test.h"
+#include "jniMethods.h"
 
 
 JavaVM *g_vm;
@@ -15,7 +15,17 @@ jstring callNativeMethod(JNIEnv *env, jclass jobj, jstring p1) {
     env->ReleaseStringUTFChars(p1, nativeString1);
     u32 a = test();
     if (a == 100) {
-        return p1;
+        return nullptr;
+    }
+    return p1;
+}
+
+jstring callNative2(JNIEnv *env, jclass jobj, jstring p1) {
+    const char *nativeString1 = env->GetStringUTFChars(p1, JNI_FALSE);
+    env->ReleaseStringUTFChars(p1, nativeString1);
+    u32 a = test();
+    if (a == 100) {
+        return nullptr;
     }
     return p1;
 }
@@ -23,6 +33,7 @@ jstring callNativeMethod(JNIEnv *env, jclass jobj, jstring p1) {
 //结构体: 分别是java层的函数名称，签名，对应的函数指针
 static JNINativeMethod gMethods[] = {
         {"callNativeMethod", "(Ljava/lang/String;)Ljava/lang/String;", (void *) callNativeMethod},
+        {"callNative2",      "(Ljava/lang/String;)Ljava/lang/String;", (void *) callNative2},
 };
 
 //每次java层加载System.loadLibrary之后，自动会查找改库一个叫JNI_OnLoad的函数

@@ -1,22 +1,12 @@
 
-/**
- * 是否已经引用了test.h这个文件了,防止多次引用
- * 一般是
- * #ifndef XXX_H
- * #define XXX_H
- *
- * ...
- *
- * #endif
- *
- */
-#ifndef JNI_METHODS_H
-#define JNI_METHODS_H
+#ifndef JNI_HOOK_H
+#define JNI_HOOK_H
 
 
 #include <jni.h>
-#define JAVA_CLASS "com/example/androidida/JniTest"
-#include "util.h"
+#include <android/log.h>
+#define TAG "xxxJNI_HOOK"
+#define JAVA_CLASS "com/example/androidida/JniHook"
 
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG,  TAG, __VA_ARGS__)
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO,  TAG, __VA_ARGS__)
@@ -30,5 +20,3 @@ __END_DECLS
 
 
 #endif //JNIHOOK_H
-
-
